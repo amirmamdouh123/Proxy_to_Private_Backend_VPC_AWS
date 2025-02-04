@@ -29,10 +29,3 @@ The architecture consists of:
 - AWS account and proper IAM permissions to create VPC, EC2 instances, load balancers, and other required resources.
 - AWS credentials configured via AWS CLI or environment variables.
 
-## Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/terraform-loadbalancer-setup.git
-cd terraform-loadbalancer-setup
