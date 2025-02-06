@@ -7,6 +7,8 @@ module "proxy1" {
   subnet_id = module.public_subnet1.subnet_id
   isProxy = true
   proxy_traffic_target = module.internal_lb.lb_dns_name
+    key_pair_name= aws_key_pair.ec2_key_pair.key_name
+
 
 }
 
@@ -19,4 +21,6 @@ module "proxy2" {
   subnet_id = module.public_subnet2.subnet_id
   isProxy = true
   proxy_traffic_target = module.internal_lb.lb_dns_name
+    key_pair_name= aws_key_pair.ec2_key_pair.key_name
+
 }

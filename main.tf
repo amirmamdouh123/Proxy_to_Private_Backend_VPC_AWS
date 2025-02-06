@@ -75,5 +75,20 @@ resource "aws_eip" "nat-eip" {
 }
 
 
+## create a SSH private/public keys
+resource "tls_private_key" "ec2_tls" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
 
+resource "aws_key_pair" "ec2_key_pair" {
+  key_name = "ec2_key_pair"
+  public_key = tls_private_key.ec2_tls.public_key_openssh
+}
+
+resource "local_file" "private_key_ssh" {
+  content = tls_private_key.ec2_tls.private_key_pem
+  filename = aws_key_pair.ec2_key_pair.key_name
+  file_permission = 0600
+}
 

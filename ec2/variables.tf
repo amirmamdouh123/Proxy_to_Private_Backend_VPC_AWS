@@ -21,3 +21,7 @@ variable "image_id" {
   variable "proxy_traffic_target" {
     type = string
   }
+
+  variable "key_pair_name" {
+    type = string
+  }
